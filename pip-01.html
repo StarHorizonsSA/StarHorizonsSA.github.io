@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIP-01 Final Results</title>
+    <link rel="stylesheet" href="pip-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Star Atlas DAO</h1>
+            <h1 class="subheading">PIP-01 Final Results</h1>
+            <p>Date and Time: July 23, 2024, 19:53 UTC</p>
+        </header>
+        
+        <section class="summary">
+            <h2>Summary <div class="volume-control">
+                <label for="volume-slider">Volume:</label>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.1">
+            </div></h2>
+            <p>Total Possible Voters: <span class="data">6440</span> POLIS Stakeholders</p>
+            <p>Total Voting Power (PVP) Pool: <span class="data">475,000,000</span></p>
+            <p>Total Votes Cast: <span class="data">894</span></p>
+            <p>Total Voting Power Used: <span class="data">175,358,517.29</span></p>
+        </section>
+
+        <section class="breakdown">
+            <h2>Voting Breakdown</h2>
+            
+            <h3>YES Votes</h3>
+            <ul>
+                <li><strong>Total YES Votes:</strong> <span class="data">782</span></li>
+                <li><strong>Total YES Voting Power:</strong> <span class="data">118,466,246.61</span></li>
+                <li><strong>Voters with less than 500K PVP:</strong> <span class="data">734</span> voters</li>
+                <li><strong>Voting Power from &lt;500K PVP group:</strong> <span class="data">32,741,138.11</span></li>
+                <li><strong>Voters with 500K or more PVP:</strong> <span class="data">48</span> voters</li>
+                <li><strong>Voting Power from ≥500K PVP group:</strong> <span class="data">85,725,108.50</span></li>
+                <li><strong>Top 12 Individuals' Combined Voting Power:</strong> <span class="data">52,451,076.62</span></li>
+            </ul>
+
+            <h3>NO Votes</h3>
+            <ul>
+                <li><strong>Total NO Votes:</strong> <span class="data">101</span></li>
+                <li><strong>Total NO Voting Power:</strong> <span class="data">50,624,407.97</span></li>
+                <li><strong>Voters with less than 500K PVP:</strong> <span class="data">88</span> voters</li>
+                <li><strong>Voting Power from &lt;500K PVP group:</strong> <span class="data">7,042,179.38</span></li>
+                <li><strong>Top 13 Individuals' Combined Voting Power:</strong> <span class="data">43,582,228.59</span></li>
+                <li><strong>Top 6 Individuals' Combined Voting Power:</strong> <span class="data">32,499,521.85</span></li>
+            </ul>
+
+            <h3>ABSTAIN Votes</h3>
+            <ul>
+                <li><strong>Total ABSTAIN Votes:</strong> <span class="data">11</span></li>
+                <li><strong>Total ABSTAIN Voting Power:</strong> <span class="data">6,267,862.72</span></li>
+                <li><strong>Voters with less than 500K PVP:</strong> <span class="data">10</span> voters</li>
+                <li><strong>One Individual's Voting Power:</strong> <span class="data">5,349,703.90</span></li>
+            </ul>
+        </section>
+
+        <section class="analysis">
+            <h2>Key Points of Analysis</h2>
+
+            <h3>Engagement Rate</h3>
+            <p>Out of 6440 possible voters, only <span class="data">894</span> participated, indicating a voter turnout of approximately <span class="data">13.88%</span>.</p>
+
+            <h3>Voting Power Distribution</h3>
+            <p>YES votes had significant support from a large number of stakeholders with relatively small voting power, but the bulk of the YES voting power came from a smaller group of high-PVP individuals. The top 12 individuals in this group had enough combined voting power (52,451,076.62) to pass PIP-01.</p>
+            <p>NO votes had a more concentrated voting power among fewer individuals. The top 13 stakeholders combined 43,582,228.59 votes, with the top 6 having 32,499,521.85 PVP.</p>
+            <p>Minimal abstentions, primarily from those with lower PVP, with one significant abstainer holding 5,349,703.90 PVP.</p>
+
+            <h3>Dominance of High-PVP Stakeholders</h3>
+            <p>In the YES group, the top 12 individuals had enough combined voting power to pass the proposal. Similarly, the NO group had a significant concentration of voting power among the top 13 individuals, indicating a centralization of influence among a small number of stakeholders with high voting power.</p>
+
+            <h3>Impact of Low-PVP Voters</h3>
+            <p>A large number of voters with less than <span class="data">500K</span> PVP participated, but their combined influence was relatively smaller compared to the high-PVP voters. This is particularly evident in the YES votes, where <span class="data">734</span> voters contributed only <span class="data">32,741,138.11</span> out of <span class="data">118,466,246.61</span> PVP.</p>
+
+            <h3>Proposal Outcome</h3>
+            <p>The proposal passed with a clear majority in both the number of votes and voting power. The high-PVP stakeholders who supported the proposal were the decisive factor in its approval.</p>
+        </section>
+
+        <footer>
+            <h2>Conclusion</h2>
+            <p>The voting results for PIP-01 show a distinct pattern where a small number of high-PVP stakeholders wield significant influence over the outcome. While there is broad participation from lower-PVP stakeholders, the ultimate decision-making power rests with the top PVP holders. This dynamic highlights the importance of understanding and potentially addressing the balance of voting power within the DAO to ensure fair and representative governance.</p>
+
+            <p>Low voter turnout is a significant concern for the Star Atlas DAO. With only <span class="data">13.88%</span> of the possible voters participating, it questions the representativeness and legitimacy of the decisions being made. Low engagement can lead to decisions that do not reflect the broader community's interests, potentially causing discontent and disengagement among stakeholders.</p>
+        </footer>
+    </div>
+    <audio id="background-music" autoplay loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        const audioElement = document.getElementById('background-music');
+        audioElement.volume = 0.1; // Set initial volume to low
+
+        const volumeSlider = document.getElementById('volume-slider');
+        volumeSlider.addEventListener('input', function() {
+            audioElement.volume = this.value;
+        });
+    </script>
+</body>
+</html>

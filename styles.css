@@ -1,0 +1,135 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: url('Logo2_Star_Horizons.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #ecf0f1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(52, 73, 94, 0.9); /* Dark background with transparency */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1:first-of-type {
+    margin-bottom: 0; /* Remove lower margin for the first h1 */
+}
+
+header .subheading {
+    margin-top: 0; /* Remove top margin for the second h1 */
+}
+
+h1 {
+    color: #ecf0f1;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #ecf0f1;
+    border-bottom: 2px solid #95a5a6;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Align items to the right */
+    align-items: center; /* Center align vertically */
+}
+
+h3 {
+    color: #bdc3c7;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    background: #3b5998;
+    margin: 5px 0;
+    padding: 10px;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    color: #ecf0f1;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+    background-color: #4b70b8;
+}
+
+ul li:hover .data {
+    color: #000;
+    font-weight: bold; /* Turn data text black and bold on hover */
+}
+
+p {
+    margin: 10px 0;
+    color: #bdc3c7;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.analysis p:hover, footer p:hover {
+    background-color: #4b70b8; /* Highlight paragraph on hover */
+    color: #ffffff; /* Change text color to white */
+}
+
+p:hover .data {
+    color: #000;
+    font-weight: bold; /* Turn data text black and bold on hover */
+}
+
+p, li {
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.data {
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+strong {
+    color: #ecf0f1;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+}
+
+#volume-slider {
+    margin-left: 10px;
+    width: 150px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+
+    p, li {
+        font-size: 0.9em;
+    }
+
+    #volume-slider {
+        width: 100px;
+    }
+}
