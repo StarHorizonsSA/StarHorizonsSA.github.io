@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Voting Power Distribution for PIP-02</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div id="chart" style="width: 1800px; height: 1200px;"></div>
+
+<script>
+    var groups = ['YES < 500K PVP', 'YES >= 500K PVP', 'NO < 500K PVP', 'NO >= 500K PVP', 'ABSTAIN < 500K PVP', 'ABSTAIN >= 500K PVP'];
+    var votes_detail = [26297380.66, 73462454.53, 11803958.89, 57211509.95, 1297019.91, 5349703.90];
+    var counts = [631, 43, 131, 20, 25, 2];
+
+    // Function to format numbers with commas
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // Format the numbers for display
+    var votes_detail_formatted = votes_detail.map(numberWithCommas);
+    var counts_formatted = counts.map(numberWithCommas);
+
+    var data = [
+        {
+            x: groups,
+            y: votes_detail,
+            type: 'bar',
+            name: 'Voting Power',
+            marker: {
+                color: ['green', 'green', 'red', 'red', 'yellow', 'yellow']
+            },
+            text: votes_detail_formatted,
+            hovertemplate: '<b>%{x}</b><br>Voting Power: %{text}<extra></extra>',
+            textposition: 'auto'
+        },
+        {
+            x: groups,
+            y: counts,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Number of Voters',
+            yaxis: 'y2',
+            marker: {
+                color: 'rgb(26, 118, 255)'
+            },
+            text: counts_formatted,
+            hovertemplate: '<b>%{x}</b><br>Number of Voters: %{text}<extra></extra>',
+            textposition: 'top center'
+        }
+    ];
+
+    var layout = {
+        title: 'PIP-2: Detailed Voting Power Distribution',
+        xaxis: {
+            tickangle: -45,
+            automargin: true  // Add automargin for better spacing
+        },
+        yaxis: {
+            title: {
+                text: 'Voting Power',
+                font: {
+                    size: 14,
+                    color: '#7f7f7f',
+                    family: 'Arial, sans-serif',
+                    weight: 'bold'
+                },
+                standoff: 20  // Increase the standoff distance
+            },
+            automargin: true  // Add automargin for better spacing
+        },
+        yaxis2: {
+            title: {
+                text: 'Number of Voters',
+                font: {
+                    size: 14,
+                    color: '#7f7f7f',
+                    family: 'Arial, sans-serif',
+                    weight: 'bold'
+                },
+                standoff: 20  // Increase the standoff distance
+            },
+            overlaying: 'y',
+            side: 'right',
+            automargin: true  // Add automargin for better spacing
+        },
+        barmode: 'group',
+        bargap: 0.15,
+        bargroupgap: 0.1,
+        hoverlabel: {
+            bgcolor: "white",
+            font: { size: 16 }
+        }
+    };
+
+    Plotly.newPlot('chart', data, layout);
+</script>
+
+</body>
+</html>

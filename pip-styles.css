@@ -133,3 +133,22 @@ strong {
         width: 100px;
     }
 }
+
+/* Style for Chart Button */
+.voting-breakdown-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: auto; /* Aligns the button to the right */
+    display: inline-block;
+}
+
+.voting-breakdown-button:hover {
+   /* background-color: #2980b9; */
+   background-color: #32a127;
+}
