@@ -21,6 +21,7 @@ body {
     margin-top: 0px; /* Margin for future top menu */
     position: absolute;
     top: 10px;
+    z-index: 999;  /* Lower thatn the dropdown to avoid interference */
 }
 
 .header-bar {
@@ -29,6 +30,7 @@ body {
     padding: 10px 20px; /* Padding to fit closely around the headings */
     border-radius: 5px; /* Slightly rounded corners */
     width: 100%; /* Ensure the header bar takes full width of the container */
+    z-index: 999;   /* Lower thatn the dropdown */
 }
 
 .main-heading, .sub-heading {
@@ -59,7 +61,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
     position: relative; /* Ensure it stays within the normal document flow */
-    z-index: 1000;
+    z-index: 1;  /* To ensure it's below the dropdown */
 }
 
 header .logo {
@@ -114,6 +116,7 @@ button:hover {
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background and transform transition */
     color: #ffffff; /* White text color */
     cursor: pointer;
+    z-index: 10;  /* To ensure each menu item stays above the container */
 }
 
 .menu ul li:hover {
@@ -131,7 +134,7 @@ button:hover {
     padding: 5px 0;
     min-width: 150px; /* Width of 2nd Level Options */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    z-index: 9999; /* Ensure dropdown appears above other elements */
+    z-index: 10000; /*  to ensure dropdown appears above other elements */
     transition: transform 0.3s ease;
 }
 
