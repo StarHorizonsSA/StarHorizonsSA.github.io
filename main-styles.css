@@ -130,7 +130,7 @@ button:hover {
     padding: 5px 0;
     min-width: 150px; /* Width of 2nd Level Options */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    z-index: 1000; /* Ensure dropdown appears above other elements */
+    z-index: 9999; /* Ensure dropdown appears above other elements */
     transition: transform 0.3s ease;
 }
 
