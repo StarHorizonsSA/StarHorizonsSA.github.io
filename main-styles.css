@@ -10,14 +10,55 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column; /* Ensure items are centered vertically */
+}
+
+.heading-container {
+    width: 80%; /* Match the width of the old container */
+    max-width: 1000px; /* Same max-width as the old container */
+    display: flex;
+    justify-content: center;
+    margin-top: 0px; /* Margin for future top menu */
+    position: absolute;
+    top: 10px;
+}
+
+.header-bar {
+    background: rgba(52, 73, 94, 0.3); /* Same background color as the old container */
+    text-align: center;
+    padding: 10px 20px; /* Padding to fit closely around the headings */
+    border-radius: 5px; /* Slightly rounded corners */
+    width: 100%; /* Ensure the header bar takes full width of the container */
+}
+
+.main-heading, .sub-heading {
+    margin: 0;
+    color: white; /* Text color for contrast */
+    transition: opacity 3s ease; /* Transition effect for headings */
+}
+
+.main-heading {
+    font-size: 3.0em;
+    font-weight: bold; /* Bold and elegant font style */
+}
+
+.sub-heading {
+    font-size: 1.5em;  /* For later use */
+}
+
+.hidden-heading {
+    opacity: 0; /* Start hidden */
 }
 
 .container {
+    width: 80%; /* Match the width of the new container */
+    max-width: 800px; /* Same max-width as the new container */
     text-align: center;
     background: rgba(52, 73, 94, 0.3); /* Dark background with more transparency */
     padding: 10px 20px; /* Reduce padding to make the background smaller */
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
+    position: relative; /* Ensure it stays within the normal document flow */
 }
 
 header .logo {
@@ -25,6 +66,11 @@ header .logo {
     max-width: 600px;
     margin: 0 auto;
     opacity: 0.8; /* Make the logo translucent */
+    transition: opacity 2s ease !important; /* Important */
+}
+
+.hidden {
+    opacity: 0 !important; /* Important */
 }
 
 button {
@@ -43,7 +89,141 @@ button:hover {
     background-color: #2980b9;
 }
 
+/* Top Menu */
+.menu {
+    margin-top: 30px;
+    font-family: 'Arial', sans-serif; /* Professional font style */
+    font-size: 1em; /* Slightly larger for readability */
+    font-weight: bold;
+}
 
+.menu ul {
+    list-style-type: none;
+    padding: 0;   /* Padding between Top Menu and H1 */
+    margin: 0;
+}
 
+.menu ul li {
+    position: relative;
+    display: inline-block;
+    padding: 5px 25px;
+    background: rgba(41, 128, 185, 0.9); /* Solid blue background with slight transparency */
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background and transform transition */
+    color: #ffffff; /* White text color */
+    cursor: pointer;
+}
 
+.menu ul li:hover {
+    background: rgba(31, 97, 141, 1); /* Darker blue on hover */
+    transform: translateX(5px); /* Shift slightly to the right on hover */
+}
 
+.menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(52, 152, 219, 0.95); /* Lighter blue background for dropdown */
+    border-radius: 5px;
+    padding: 5px 0;
+    min-width: 150px; /* Width of 2nd Level Options */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+    transition: transform 0.3s ease;
+}
+
+.menu ul li:hover ul {
+    display: block;
+    transform: translateX(25px); /* Dropdown menu shifts right when opened */
+}
+
+.menu ul li ul li {
+    display: block;
+    padding: 3px 20px;
+    margin: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.menu ul li ul li a {
+    color: #ecf0f1; /* Light text color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu ul li ul li:hover a {
+    color: #000000; /* Highlight text color on hover */
+}
+
+.menu ul li ul li:hover {
+    background: rgb(53, 185, 41); /* Background color of innermost box */
+    padding-left: 35px; /* Indent innermost box slightly on hover */
+    transition: background-color 0.3s ease, padding-left 0.3s ease; /* Smooth transition for padding */
+}
+
+/*Music Slider*/
+.volume-control {
+    display: flex;
+    align-items: center;
+}
+
+#volume-slider {
+    margin-left: 10px;
+    width: 150px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    color: black;
+  }
+
+  .modal input[type="text"] {
+    width: 50%; /* Controls the width of the input box */
+    padding: 10px; /* Controls the height of the input box (indirectly, by adding padding inside the box) */
+    font-size: 1em; /* Controls the font size inside the input box */
+    margin: 10px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+    background-color: #2980b9;
+}
+
+  

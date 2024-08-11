@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIP-02 Final Results</title>
+    <title>PIP-2 Final Results</title>
     <link rel="stylesheet" href="pip-styles.css">
 </head>
 <body>
@@ -27,7 +27,8 @@
 
         <section class="breakdown">
             <h2>Voting Breakdown 
-                <button onclick="location.href='Chart_Data_PIP2.html'" class="voting-breakdown-button">Data Visualization</button>
+                <!-- <button onclick="location.href='Chart_Data_PIP2.html'" class="voting-breakdown-button">Data Visualization</button> -->
+                <button onclick="window.open('Chart_Data_PIP2.html', '_blank')" class="voting-breakdown-button">Data Visualization</button> 
             </h2>
             
             <h3>YES Votes</h3>
@@ -89,10 +90,15 @@
             <p>Low voter turnout is a significant concern for the Star Atlas DAO. With only <span class="data">13.23%</span> of the possible voters participating, it questions the representativeness and legitimacy of the decisions being made. Low engagement can lead to decisions that do not reflect the broader community's interests, potentially causing discontent and disengagement among stakeholders.</p>
         </footer>
     </div>
+
+    <!-- Fixed position 'Return to Home' button -->
+    <a href="index.html" class="fixed-return-button">Home</a>
+
     <audio id="background-music" autoplay loop>
         <source src="background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
     <script>
         const audioElement = document.getElementById('background-music');
         audioElement.volume = 0.1; // Set initial volume to low

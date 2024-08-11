@@ -5,18 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Horizons Main Page</title>
     <link rel="stylesheet" href="main-styles.css">
+    <script defer src="main-scripts.js"></script>
 </head>
 <body>
+    <div class="heading-container">
+        <div class="header-bar">
+            <h1 class="main-heading hidden-heading">Star Horizons</h1>
+            
+            <nav class="menu">
+                <ul>
+                    <li>Star Atlas
+                        <ul>
+                            <li><a href="https://play.staratlas.com/" target="_blank">Home</a></li>
+                            <li><a href="https://play.staratlas.com/market/" target="_blank">Marketplace</a></li>
+                            <li><a href="https://staratlas.com/newsroom/economic-reports" target="_blank">Economic Reports</a></li>
+                            <li><a href="https://staratlas.com/economics-paper.pdf" target="_blank">Tokenomics White Paper</a></li>
+                            <li><a href="https://staratlas.com/assets/pdfs/sustainable-governance.pdf" target="_blank">Sustainable Governance Paper</a></li>
+                            <li><a href="https://medium.com/@staratlasgame" target="_blank">Medium Articles</a></li>                            
+                            <li><a href="https://lore.staratlas.com/" target="_blank">Lore Wiki</a></li>
+                            <li><a href="https://www.youtube.com/@staratlastv6179/featured" target="_blank">Videos: Meetings</a></li>
+                            <li><a href="https://build.staratlas.com/" target="_blank">Resources for Builders</a></li>
+                        </ul>
+                    </li>
+                    <li>SH Tools
+                        <ul>
+                            <li><a href="crew_component_calc.html" target="_blank">CREW & Cost Estimator</a></li>
+                            <li><a href="Galia_Map_Resources_1.1.0.png" target="_blank">Galia Map: Resources</a></li>
+                            <li><a href="#">Crafting Chart (Coming Soon)</a></li>
+                        </ul>
+                    </li>
+                    <li>Star Atlas DAO
+                        <ul>
+                            <li><a href="https://docs.google.com/spreadsheets/d/1ZjaYOi3A_g1Zq7UHEUWuDha08kwQHP950WsTvxCKquc/edit?usp=sharing" target="_blank">PIP Raw Data</a></li>
+                            <li><a href="https://govern.staratlas.com/treasury" target="_blank">SA DAO: Treasury</a></li>
+                            <li><a href="https://flipsidecrypto.xyz/steven-sabol-dir-of-economy/star-atlas-investor-dashboard-yNeNWo?tabIndex=2" target="_blank">POLIS Stakeholders</a></li>
+                            <li><a href="Star_Atlas_Foundation.PDF" target="_blank">SA Foundation</a></li>
+                        </ul>
+                    </li>
+                    <li>SH Media
+                        <ul>
+                            <li><a href="https://medium.com/@starhorizonsofficial" target="_blank">Medium Articles</a></li>
+                            <li><a href="https://x.com/StarHorizonsSA" target="_blank">Social Media: X</a></li>
+                            <li><a href="#">Manuals: Coming Soon</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="volume-control">
+                            <label for="volume-slider">Volume:</label>
+                            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.1">
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
     <div class="container">
+        <h2 class="sub-heading hidden-heading">POLIS Improvement Proposal (PIP) Dashboard</h2>
         <header>
-            <img src="SH_Over_White_Banner.png" alt="Star Horizons Logo" class="logo">
+            <img src="SH_Over_White_Banner.png" alt="Star Horizons Logo" class="logo" id="logo">
         </header>
         <main>
-            <button onclick="location.href='pip-01.html'">View PIP-01 Results</button>
-            <button onclick="location.href='pip-02.html'">View PIP-02 Results</button>
-            <button onclick="location.href='https://docs.google.com/spreadsheets/d/1ZjaYOi3A_g1Zq7UHEUWuDha08kwQHP950WsTvxCKquc/edit?usp=sharing'">View PIP Results: Raw Data</button>
+            <button onclick="viewPIP()">View PIP Results</button>
+            <!-- <button onclick="location.href='pip-1.html'">View PIP-01 Results</button> -->
+            <!-- <button onclick="location.href='pip-2.html'">View PIP-02 Results</button> --> 
+            <!-- <button onclick="location.href='https://docs.google.com/spreadsheets/d/1ZjaYOi3A_g1Zq7UHEUWuDha08kwQHP950WsTvxCKquc/edit?usp=sharing'">View PIP Results: Raw Data</button> -->
         </main>
     </div>
+
+        <!-- Loading Modal -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+        <h2>Loading...</h2>
+        <p>Preparing files, please wait.</p>
+        </div>
+    </div>
+  
+    <!-- Input Prompt Modal -->
+    <div id="pipPromptModal" class="modal">
+        <div class="modal-content">
+            <h2>Enter PIP Number</h2>
+            <p>Please enter a valid PIP number to view (e.g., 1, 2):</p>
+            <input type="text" id="pipInput" placeholder="PIP Number">
+            <div>
+                <button id="submitPIP" class="modal-button">Submit</button>
+                <button id="cancelPIP" class="modal-button">Cancel</button>
+            </div>
+        </div>
+    </div>  
+    
+    <!-- Audio for Main Page -->
+    <audio id="background-music" autoplay loop>
+        <source src="Inner_Peace.mp3"audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        const audioElement = document.getElementById('background-music');
+        audioElement.volume = 0.2; // Set initial volume to low
+
+        const volumeSlider = document.getElementById('volume-slider');
+        volumeSlider.addEventListener('input', function() {
+            audioElement.volume = this.value;
+        });
+    </script> 
 </body>
 </html>
-
