@@ -21,7 +21,7 @@ body {
     margin-top: 0px; /* Margin for future top menu */
     position: absolute;
     top: 10px;
-    z-index: 999;  /* Lower thatn the dropdown to avoid interference */
+    z-index: 999;  /* Lower than the dropdown to avoid interference */
 }
 
 .header-bar {
@@ -30,7 +30,7 @@ body {
     padding: 10px 20px; /* Padding to fit closely around the headings */
     border-radius: 5px; /* Slightly rounded corners */
     width: 100%; /* Ensure the header bar takes full width of the container */
-    z-index: 999;   /* Lower thatn the dropdown */
+    z-index: 999;   /* Lower than the dropdown */
 }
 
 .main-heading, .sub-heading {
@@ -73,7 +73,18 @@ header .logo {
 }
 
 .hidden {
-    opacity: 0 !important; /* Important */
+    animation: fadeOut 2s forwards; /* Apply the fadeOut animation over 1 second */
+}
+
+/* Keyframe animation to fade out and remove the logo */
+@keyframes fadeOut {
+    0% {
+        opacity: 0.8; /* Start at the current opacity */        
+    }
+    100% {
+        opacity: 0; /* End at 0 opacity */
+        /* display: none    Because it can't be animated - action managed by js code now */
+    }
 }
 
 button {
@@ -229,5 +240,6 @@ button:hover {
 .modal-button:hover {
     background-color: #2980b9;
 }
+
 
   
