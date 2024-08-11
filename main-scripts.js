@@ -41,23 +41,26 @@ function viewPIP() {
 
     // Find the largest PIP number
     findLargestPipNumber(10, function(largestPipNumber) {     //  <<-- CHANGE AS PIP FILES INCREASE
-        
+
         // Once the largest PIP number is found, hide the loading modal and show the input modal
         loadingModal.style.display = 'none';
         pipPromptModal.style.display = 'block';
 
         // Handle the submission of the PIP number
         submitPIP.onclick = function() {
-            const pipNumber = pipInput.value.trim();
-
+            let pipNumber = pipInput.value.trim(); // Get the input value
+        
+            // Convert the input to a number and validate
+            pipNumber = Number(pipNumber);
+        
             // Validate the input
-            if (isNaN(pipNumber) || Number(pipNumber) <= 0 || pipNumber === "") {
+            if (isNaN(pipNumber) || pipNumber <= 0 || pipInput.value.trim() === "") {
                 alert("Please enter a valid PIP number.");
-            } else if (Number(pipNumber) > largestPipNumber) {
+            } else if (pipNumber > largestPipNumber) {
                 alert(`PIP number is too large. Please enter a PIP number from 1 to ${largestPipNumber}.`);
             } else {
-                const pipUrl = "PIP-" + Number(pipNumber) + ".html";
-
+                const pipUrl = "PIP-" + pipNumber + ".html";
+        
                 checkFileExists(pipUrl, function(exists) {
                     if (exists) {
                         window.location.href = pipUrl;
@@ -86,7 +89,7 @@ function findLargestPipNumber(maxCheck = 1000, callback) {   // Default value of
             return;
         }
 
-        const pipUrl = `PIP-${currentCheck}.html`;
+        const pipUrl = `pip-${currentCheck}.html`;
 
         checkFileExists(pipUrl, function(exists) {
             if (exists) {
