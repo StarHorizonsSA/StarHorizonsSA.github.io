@@ -59,7 +59,7 @@ function viewPIP() {
             } else if (pipNumber > largestPipNumber) {
                 alert(`PIP number is too large. Please enter a PIP number from 1 to ${largestPipNumber}.`);
             } else {
-                const pipUrl = "PIP-" + pipNumber + ".html";
+                const pipUrl = "pip-" + pipNumber + ".html";
         
                 checkFileExists(pipUrl, function(exists) {
                     if (exists) {
