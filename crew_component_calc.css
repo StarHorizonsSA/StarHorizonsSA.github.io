@@ -43,8 +43,18 @@ select, input[type="number"] {
     color: #ecf0f1; /* Light text color */
     border: 1px solid #555; /* Border that matches the theme */
     border-radius: 5px;
-    margin-bottom: 10px; /* Consistent spacing */
+    margin-bottom: 10px; /* Consistent spacing */   
 }
+
+/* Box border color change on number-of-ships input */
+input[type="number"]:hover {
+    border-color:yellow;
+}
+/* Box color change on ship-type input */
+form #ship-type:hover {
+    border-color: yellow;
+}
+
 
 /* Button Container */
 .button-container {
@@ -181,3 +191,23 @@ td.numeric {
     color: #bdc3c7;
 }
 
+/* Return Home Anchor */
+.fixed-return-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensure it stays above other elements */
+    font-weight: bold; /* Make the text bold for better visibility */
+}
+
+.fixed-return-button:hover {
+    background-color: #2980b9;
+}

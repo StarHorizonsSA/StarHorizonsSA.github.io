@@ -1,4 +1,11 @@
 const shipData = {
+    "Silver 1 Card Pack": {class: 0, rarity: "silver", crew: 1, crewRarity: "silver"},
+    "Gold 1 Card Pack": {class: 0, rarity: "gold", crew: 1, crewRarity: "gold"},
+    "Platinum 1 Card Pack": {class: 0, rarity: "platinum", crew: 1, crewRarity: "platinum"},
+    "Silver 5 Card Pack": {class: 0, rarity: "silver", crew: 5, crewRarity: "silver"},
+    "Gold 5 Card Pack": {class: 0, rarity: "gold", crew: 5, crewRarity: "gold"},
+    "Platinum 5 Card Pack": {class: 0, rarity: "platinum", crew: 5, crewRarity: "platinum"},
+    "Platinum 10 Card Pack": {class: 0, rarity: "platinum", crew: 10, crewRarity: "platinum"},
     "fimbul airbike": {class: 1, rarity: "common", crew: 1, crewRarity: "silver"},
     "opal jet": {class: 1, rarity: "common", crew: 1, crewRarity: "silver"},
     "vzus solos": {class: 1, rarity: "common", crew: 1, crewRarity: "silver"},
